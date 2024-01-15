@@ -29,7 +29,7 @@ using namespace std;
 //         return temp;
 //     }
 // };
-class Solution
+class Solution//Optimized Solution
 {
 public:
     vector<int> intersection(vector<int> &nums1, vector<int> &nums2)
