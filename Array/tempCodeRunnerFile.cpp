@@ -1,4 +1,7 @@
-        // for (int i = 0; i < nums.size(); i++)
-        // {
-        //     cout << nums[i] << " TMKOC" << endl;
-        // }
+  // int max = *max_element(nums.begin() + i + 1, num.begin() + pointer);
+            // i = max;
+            // count++;
+            // if (i >= nums.end() - 1)
+            // {
+            //     return count;
+            // }

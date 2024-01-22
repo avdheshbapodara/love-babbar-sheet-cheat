@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// Today's Date -
+// Today's Date -17/01/24
 // Leetcode Question Name -
 
 class Solution
@@ -9,19 +9,32 @@ class Solution
 public:
     int smallestRangeII(vector<int> &nums, int k)
     {
-        for (int i = 0; i < nums.size() / 2; i++)
-            nums[i] = nums[i] + k;
-        for (int i = nums.size() / 2; i < nums.size(); i++)
-            nums[i] = nums[i] - k;
-
+        int max = *max_element(nums.begin(), nums.end());
+        // cout << max;
+        for (int i = 0; i < nums.size(); i++)
+        {
+            if (nums[i] <= max/2)
+            {
+                nums[i] = nums[i] + k;
+                // cout << "Ja beii " << max << endl;
+            }
+            else
+            //  (nums[i] > nums[nums.size() - 1] / 2)
+            {
+                // cout << "Kem bhai" << endl;
+                nums[i] = nums[i] - k;
+            }
+        }
+        for (auto &ele : nums)
+            cout << ele << endl;
         return *max_element(nums.begin(), nums.end()) - *min_element(nums.begin(), nums.end());
     }
 };
 
 int main()
 {
-    int k = 3;
-    vector<int> vec = {1, 3, 6};
+    int k = 1;
+    vector<int> vec = {2, 7, 2};
     Solution solution;
     cout << solution.smallestRangeII(vec, k) << endl;
     return 0;
